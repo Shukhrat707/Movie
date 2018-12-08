@@ -1,0 +1,26 @@
+PODS:
+  - MKRingProgressView (2.0.1)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - SwiftSoup (1.7.2)
+
+DEPENDENCIES:
+  - MKRingProgressView
+  - SDWebImage
+  - SwiftSoup
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MKRingProgressView
+    - SDWebImage
+    - SwiftSoup
+
+SPEC CHECKSUMS:
+  MKRingProgressView: a2adeddfff0ea03f0fb7f8b108f3f77176db3bb5
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SwiftSoup: e5f61d37e3d802a4b5db81b4945de3da9bfdf115
+
+PODFILE CHECKSUM: 0375cd3e1ea22396c7e2435f972bfba985fc10a5
+
+COCOAPODS: 1.5.2

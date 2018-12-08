@@ -8,15 +8,10 @@
 
 import UIKit
 
-class TopController: UITableViewController {
-    
-    let cellId = "cellId"
-
+class TopController: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nib = UINib(nibName: "MovieCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: cellId)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
