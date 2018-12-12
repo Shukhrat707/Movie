@@ -11,6 +11,7 @@ import UIKit
 class BaseVC: UITableViewController {
     
     let cellId = "cellId"
+    var isStatusBarHidden = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +21,20 @@ class BaseVC: UITableViewController {
     }
     
     @objc fileprivate func handleDismissNotification() {
+        
+        isStatusBarHidden = false
+        UIView.animate(withDuration: 0.5) {
+            self.setNeedsStatusBarAppearanceUpdate()
+        }
+        
         DispatchQueue.main.async {
             self.navigationController?.setNavigationBarHidden(false, animated: true)
             self.tabBarController?.tabBar.isHidden = false
         }
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return isStatusBarHidden
     }
     
     //MARK: - TableView Setup

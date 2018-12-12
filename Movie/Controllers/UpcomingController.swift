@@ -83,6 +83,12 @@ class UpcomingController: BaseVC {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GoToPreview" {
+            
+            isStatusBarHidden = true
+            UIView.animate(withDuration: 0.5) {
+                self.setNeedsStatusBarAppearanceUpdate()
+            }
+            
             let destinationVC = segue.destination as! PreviewController
             destinationVC.postCard = self.postCard
         }

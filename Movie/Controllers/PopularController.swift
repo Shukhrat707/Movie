@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftSoup
-import Alamofire
 
 class PopularController: BaseVC, UISearchBarDelegate {
     
@@ -109,6 +108,7 @@ class PopularController: BaseVC, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
         navigationController?.setNavigationBarHidden(true, animated: true)
         tabBarController?.tabBar.isHidden = true
         postCard = postCards[indexPath.row]
@@ -139,6 +139,10 @@ class PopularController: BaseVC, UISearchBarDelegate {
         if segue.identifier == "GoToPreview" {
             let vc = segue.destination as! PreviewController
             vc.postCard = postCard
+            isStatusBarHidden = true
+            UIView.animate(withDuration: 0.5) {
+                self.setNeedsStatusBarAppearanceUpdate()
+            }
         }
     }
 }

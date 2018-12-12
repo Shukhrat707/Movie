@@ -62,24 +62,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2dw-HQ-jpy">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30M-wg-IXN" customClass="YouTubePlayerView" customModule="YouTubePlayer">
-                                        <rect key="frame" x="10.333333333333343" y="337.66666666666669" width="393.33333333333326" height="220.66666666666669"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="30M-wg-IXN" secondAttribute="height" multiplier="372:209" id="HsP-pn-4ao"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstItem="30M-wg-IXN" firstAttribute="centerX" secondItem="2dw-HQ-jpy" secondAttribute="centerX" id="Bbe-ES-No8"/>
-                                    <constraint firstAttribute="width" secondItem="30M-wg-IXN" secondAttribute="width" multiplier="100:95" id="Hqc-Q2-df6"/>
-                                    <constraint firstItem="30M-wg-IXN" firstAttribute="centerY" secondItem="2dw-HQ-jpy" secondAttribute="centerY" id="SHs-uc-VB7"/>
-                                </constraints>
-                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyU-In-P8O">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
@@ -252,6 +234,24 @@
                                     <outlet property="delegate" destination="dm6-eV-Yqe" id="YyT-PP-fw3"/>
                                 </connections>
                             </scrollView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2dw-HQ-jpy">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30M-wg-IXN" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                        <rect key="frame" x="10.333333333333343" y="337.66666666666669" width="393.33333333333326" height="220.66666666666669"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="30M-wg-IXN" secondAttribute="height" multiplier="372:209" id="HsP-pn-4ao"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="30M-wg-IXN" firstAttribute="centerX" secondItem="2dw-HQ-jpy" secondAttribute="centerX" id="Bbe-ES-No8"/>
+                                    <constraint firstAttribute="width" secondItem="30M-wg-IXN" secondAttribute="width" multiplier="100:95" id="Hqc-Q2-df6"/>
+                                    <constraint firstItem="30M-wg-IXN" firstAttribute="centerY" secondItem="2dw-HQ-jpy" secondAttribute="centerY" id="SHs-uc-VB7"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -264,7 +264,7 @@
                             <constraint firstAttribute="top" secondItem="2dw-HQ-jpy" secondAttribute="top" id="hI1-Q2-Knx"/>
                             <constraint firstAttribute="trailing" secondItem="2dw-HQ-jpy" secondAttribute="trailing" id="t8d-S2-onB"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Kv7-8p-Bro"/>
+                        <viewLayoutGuide key="safeArea" id="Qa3-wx-bWi"/>
                     </view>
                     <connections>
                         <outlet property="backgroundImage" destination="JZi-Ob-Bgf" id="Ef9-H3-Ghf"/>

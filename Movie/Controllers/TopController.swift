@@ -86,6 +86,11 @@ class TopController: BaseVC {
         if segue.identifier == "GoToPreview" {
             let destinationVC = segue.destination as! PreviewController
             destinationVC.postCard = self.postCard
+            
+            isStatusBarHidden = true
+            UIView.animate(withDuration: 0.5) {
+                self.setNeedsStatusBarAppearanceUpdate()
+            }
         }
     }
 }

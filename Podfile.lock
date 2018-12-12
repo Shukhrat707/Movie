@@ -1,5 +1,4 @@
 PODS:
-  - Alamofire (4.7.3)
   - MKRingProgressView (2.0.1)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
@@ -8,7 +7,6 @@ PODS:
   - YouTubePlayer (0.4.0)
 
 DEPENDENCIES:
-  - Alamofire
   - MKRingProgressView
   - SDWebImage
   - SwiftSoup
@@ -16,19 +14,17 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Alamofire
     - MKRingProgressView
     - SDWebImage
     - SwiftSoup
     - YouTubePlayer
 
 SPEC CHECKSUMS:
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   MKRingProgressView: a2adeddfff0ea03f0fb7f8b108f3f77176db3bb5
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SwiftSoup: e5f61d37e3d802a4b5db81b4945de3da9bfdf115
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: b37f8ab80c0a78026e3bfc128c3d52b4a930b376
+PODFILE CHECKSUM: 1cdbd2a95f09aff59303216d45f735fa435519e4
 
 COCOAPODS: 1.5.2

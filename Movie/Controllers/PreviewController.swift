@@ -36,6 +36,8 @@ class PreviewController: UIViewController, YouTubePlayerDelegate {
         
         setupItems()
         setupGesture()
+        
+        setNeedsStatusBarAppearanceUpdate()
     }
     
     fileprivate func setupGesture() {
@@ -152,6 +154,7 @@ class PreviewController: UIViewController, YouTubePlayerDelegate {
     }
     
     override var prefersStatusBarHidden: Bool {
+        
         return true
     }
     
