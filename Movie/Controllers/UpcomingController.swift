@@ -17,6 +17,24 @@ class UpcomingController: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchMovie()
+        let refreshControl = UIRefreshControl()
+        let refreshTitle = "Pull to refresh..."
+        refreshControl.attributedTitle = NSAttributedString(string: refreshTitle)
+        refreshControl.addTarget(self,
+                                 action: #selector(refreshOptions(sender:)),
+                                 for: .valueChanged)
+        tableView.refreshControl = refreshControl
+    }
+    
+    @objc fileprivate func refreshOptions(sender: UIRefreshControl) {
+        
+        searchMovie()
+        sender.endRefreshing()
+    }
+    
+    
+    fileprivate func searchMovie() {
         HTMLConverter.shared.urlToHTMLString(url: "\(HTMLConverter.shared.BASE_URL)/movie/upcoming") { (htmlString, error) in
             if let error = error {
                 print("Error: \(error)")
@@ -57,6 +75,8 @@ class UpcomingController: BaseVC {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        tabBarController?.tabBar.isHidden = true
         postCard = upcomingPostCards[indexPath.row]
         performSegue(withIdentifier: "GoToPreview", sender: self)
     }

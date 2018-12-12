@@ -17,6 +17,18 @@ class TopController: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchQuery()
+        
+        let refreshControl = UIRefreshControl()
+        let refreshTitle = "Pull to refresh..."
+        refreshControl.attributedTitle = NSAttributedString(string: refreshTitle)
+        refreshControl.addTarget(self,
+                                 action: #selector(refreshOptions(sender:)),
+                                 for: .valueChanged)
+        tableView.refreshControl = refreshControl
+    }
+    
+    fileprivate func searchQuery() {
         HTMLConverter.shared.urlToHTMLString(url: "\(HTMLConverter.shared.BASE_URL)/movie/top-rated") { (htmlString, error) in
             if let error = error {
                 print("Error: \(error)")
@@ -26,6 +38,12 @@ class TopController: BaseVC {
                 self.parseHTML(html: htmlString)
             }
         }
+    }
+    
+    @objc fileprivate func refreshOptions(sender: UIRefreshControl) {
+        
+        searchQuery()
+        sender.endRefreshing()
     }
     
     func parseHTML(html: String) {
@@ -56,6 +74,9 @@ class TopController: BaseVC {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        tabBarController?.tabBar.isHidden = true
         postCard = topPostCards[indexPath.row]
         performSegue(withIdentifier: "GoToPreview", sender: self)
     }

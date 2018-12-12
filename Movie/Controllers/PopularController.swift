@@ -29,13 +29,19 @@ class PopularController: BaseVC, UISearchBarDelegate {
         
         searchBarSetup()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleDismissNotification), name: DISMISS_PREVIEW_VIEW, object: nil)
+        let refreshControl = UIRefreshControl()
+        let refreshTitle = "Pull to refresh..."
+        refreshControl.attributedTitle = NSAttributedString(string: refreshTitle)
+        refreshControl.addTarget(self,
+                                 action: #selector(refreshOptions(sender:)),
+                                 for: .valueChanged)
+        tableView.refreshControl = refreshControl
     }
     
-    @objc fileprivate func handleDismissNotification() {
-        DispatchQueue.main.async {
-            self.navigationController?.setNavigationBarHidden(false, animated: true)
-        }
+    @objc fileprivate func refreshOptions(sender: UIRefreshControl) {
+        
+        searchQueryFor(postCard: "/movie")
+        sender.endRefreshing()
     }
     
     fileprivate func searchQueryFor(postCard postcard: String) {
@@ -104,6 +110,7 @@ class PopularController: BaseVC, UISearchBarDelegate {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         navigationController?.setNavigationBarHidden(true, animated: true)
+        tabBarController?.tabBar.isHidden = true
         postCard = postCards[indexPath.row]
         performSegue(withIdentifier: "GoToPreview", sender: self)
     }

@@ -16,6 +16,14 @@ class BaseVC: UITableViewController {
         super.viewDidLoad()
         
         tableViewSetup()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleDismissNotification), name: DISMISS_PREVIEW_VIEW, object: nil)
+    }
+    
+    @objc fileprivate func handleDismissNotification() {
+        DispatchQueue.main.async {
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+            self.tabBarController?.tabBar.isHidden = false
+        }
     }
     
     //MARK: - TableView Setup
