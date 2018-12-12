@@ -8,16 +8,14 @@
 
 import UIKit
 
-class BaseVC: UITableViewController, UISearchBarDelegate {
+class BaseVC: UITableViewController {
     
     let cellId = "cellId"
-    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableViewSetup()
-        searchBarSetup()
     }
     
     //MARK: - TableView Setup
@@ -28,11 +26,7 @@ class BaseVC: UITableViewController, UISearchBarDelegate {
         tableView.register(nib, forCellReuseIdentifier: cellId)
     }
     
-    //MARK: - SearchBar Setup
-    fileprivate func searchBarSetup() {
-        
-        navigationItem.searchController = searchController
-        searchController.searchBar.delegate = self
-        
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
 }

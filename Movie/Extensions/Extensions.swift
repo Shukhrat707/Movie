@@ -10,6 +10,7 @@ import UIKit
 import MKRingProgressView
 
 extension RingProgressView {
+    
     func animateTo(_ number: Int) {
         CATransaction.begin()
         CATransaction.setAnimationDuration(1.0)

@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0DF6EF63FCFADF0D79BDCA9F /* Pods_MovieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A349B30B722D17F54B008DE /* Pods_MovieUITests.framework */; };
-		C30E9D9E21BB5E9100C57F8E /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30E9D9D21BB5E9100C57F8E /* BaseVC.swift */; };
-		C30E9DA121BB637200C57F8E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30E9DA021BB637200C57F8E /* APIService.swift */; };
 		C30E9DA421BB672500C57F8E /* HTMLConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30E9DA321BB672500C57F8E /* HTMLConverter.swift */; };
 		C343183121BAD52800993F13 /* PostCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343183021BAD52800993F13 /* PostCard.swift */; };
+		C34F655521BCA52A00CFA58A /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34F655421BCA52A00CFA58A /* SearchView.xib */; };
+		C34F655721BCBF9C00CFA58A /* PreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34F655621BCBF9C00CFA58A /* PreviewController.swift */; };
 		C363B82821B2B60E00F065DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C363B82721B2B60E00F065DF /* AppDelegate.swift */; };
 		C363B82D21B2B60E00F065DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C363B82B21B2B60E00F065DF /* Main.storyboard */; };
 		C363B82F21B2B60F00F065DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C363B82E21B2B60F00F065DF /* Assets.xcassets */; };
@@ -24,6 +24,7 @@
 		C3C27C1021B8AB1C00BD484C /* UpcomingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C27C0F21B8AB1C00BD484C /* UpcomingController.swift */; };
 		C3C27C1521B8DB8300BD484C /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C27C1321B8DB8300BD484C /* MovieCell.swift */; };
 		C3C27C1621B8DB8300BD484C /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3C27C1421B8DB8300BD484C /* MovieCell.xib */; };
+		C3C8641021BC1A6200AF134F /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C8640F21BC1A6200AF134F /* BaseVC.swift */; };
 		EA67FFD81FF27C087FF77EE5 /* Pods_Movie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84979CF442CCD48CC04686D /* Pods_Movie.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,10 +43,10 @@
 		15188C702032F211C23AFD91 /* Pods-Movie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Movie/Pods-Movie.release.xcconfig"; sourceTree = "<group>"; };
 		1A349B30B722D17F54B008DE /* Pods_MovieUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB009A6D59D356CE5B81298 /* Pods-MovieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieUITests/Pods-MovieUITests.release.xcconfig"; sourceTree = "<group>"; };
-		C30E9D9D21BB5E9100C57F8E /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
-		C30E9DA021BB637200C57F8E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		C30E9DA321BB672500C57F8E /* HTMLConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLConverter.swift; sourceTree = "<group>"; };
 		C343183021BAD52800993F13 /* PostCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCard.swift; sourceTree = "<group>"; };
+		C34F655421BCA52A00CFA58A /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
+		C34F655621BCBF9C00CFA58A /* PreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewController.swift; sourceTree = "<group>"; };
 		C363B82421B2B60E00F065DF /* Movie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C363B82721B2B60E00F065DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C363B82C21B2B60E00F065DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		C3C27C0F21B8AB1C00BD484C /* UpcomingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingController.swift; sourceTree = "<group>"; };
 		C3C27C1321B8DB8300BD484C /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		C3C27C1421B8DB8300BD484C /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		C3C8640F21BC1A6200AF134F /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		D84979CF442CCD48CC04686D /* Pods_Movie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3500E213CBEBD42F9F1DCAE /* Pods-Movie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Movie/Pods-Movie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,7 +102,6 @@
 		C30E9D9F21BB635300C57F8E /* APIService */ = {
 			isa = PBXGroup;
 			children = (
-				C30E9DA021BB637200C57F8E /* APIService.swift */,
 				C30E9DA321BB672500C57F8E /* HTMLConverter.swift */,
 			);
 			path = APIService;
@@ -112,6 +113,16 @@
 				C343183021BAD52800993F13 /* PostCard.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C34F655321BCA50E00CFA58A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C3C27C1321B8DB8300BD484C /* MovieCell.swift */,
+				C3C27C1421B8DB8300BD484C /* MovieCell.xib */,
+				C34F655421BCA52A00CFA58A /* SearchView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C363B81B21B2B60E00F065DF = {
@@ -137,18 +148,17 @@
 		C363B82621B2B60E00F065DF /* Movie */ = {
 			isa = PBXGroup;
 			children = (
-				C3A2D7EE21BB9DAC001B7033 /* Util */,
+				C34F655321BCA50E00CFA58A /* View */,
 				C3A2D7EB21BB9855001B7033 /* Extensions */,
 				C30E9D9F21BB635300C57F8E /* APIService */,
 				C343182F21BAD4CB00993F13 /* Model */,
 				C3C27C0A21B8AADB00BD484C /* Controllers */,
+				C3A2D7EE21BB9DAC001B7033 /* Util */,
 				C363B82721B2B60E00F065DF /* AppDelegate.swift */,
 				C363B82B21B2B60E00F065DF /* Main.storyboard */,
 				C363B82E21B2B60F00F065DF /* Assets.xcassets */,
 				C363B83021B2B60F00F065DF /* LaunchScreen.storyboard */,
 				C363B83321B2B60F00F065DF /* Info.plist */,
-				C3C27C1321B8DB8300BD484C /* MovieCell.swift */,
-				C3C27C1421B8DB8300BD484C /* MovieCell.xib */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -184,7 +194,8 @@
 				C3C27C0B21B8AAFD00BD484C /* PopularController.swift */,
 				C3C27C0D21B8AB0D00BD484C /* TopController.swift */,
 				C3C27C0F21B8AB1C00BD484C /* UpcomingController.swift */,
-				C30E9D9D21BB5E9100C57F8E /* BaseVC.swift */,
+				C3C8640F21BC1A6200AF134F /* BaseVC.swift */,
+				C34F655621BCBF9C00CFA58A /* PreviewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -283,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C363B83221B2B60F00F065DF /* LaunchScreen.storyboard in Resources */,
+				C34F655521BCA52A00CFA58A /* SearchView.xib in Resources */,
 				C363B82F21B2B60F00F065DF /* Assets.xcassets in Resources */,
 				C3C27C1621B8DB8300BD484C /* MovieCell.xib in Resources */,
 				C363B82D21B2B60E00F065DF /* Main.storyboard in Resources */,
@@ -324,15 +336,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Movie/Pods-Movie-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/MKRingProgressView/MKRingProgressView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
+				"${BUILT_PRODUCTS_DIR}/YouTubePlayer/YouTubePlayer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MKRingProgressView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -364,15 +380,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C34F655721BCBF9C00CFA58A /* PreviewController.swift in Sources */,
 				C3C27C0E21B8AB0D00BD484C /* TopController.swift in Sources */,
+				C3C8641021BC1A6200AF134F /* BaseVC.swift in Sources */,
 				C3A2D7F021BB9DBD001B7033 /* Constants.swift in Sources */,
 				C3A2D7ED21BB986E001B7033 /* Extensions.swift in Sources */,
 				C343183121BAD52800993F13 /* PostCard.swift in Sources */,
 				C3C27C1021B8AB1C00BD484C /* UpcomingController.swift in Sources */,
 				C363B82821B2B60E00F065DF /* AppDelegate.swift in Sources */,
 				C3C27C1521B8DB8300BD484C /* MovieCell.swift in Sources */,
-				C30E9D9E21BB5E9100C57F8E /* BaseVC.swift in Sources */,
-				C30E9DA121BB637200C57F8E /* APIService.swift in Sources */,
 				C30E9DA421BB672500C57F8E /* HTMLConverter.swift in Sources */,
 				C3C27C0C21B8AAFD00BD484C /* PopularController.swift in Sources */,
 			);

@@ -37,7 +37,7 @@ class MovieCell: UITableViewCell {
         movieID                = postCard.movieId
         movieImageView.sd_setImage(with: imageUrl, completed: nil)
         
-         movieRank.text         = "\(Int(postCard.movieRate))%"
+        movieRank.text         = "\(Int(postCard.movieRate))%"
         
         if Int(postCard.movieRate) == 0 {
             movieRank.text = "NR"
@@ -58,7 +58,7 @@ class MovieCell: UITableViewCell {
             progressView.endColor   = FULL_COLOR
             progressView.backgroundRingColor = FULL_COLOR.withAlphaComponent(0.3)
         }
-//        progressView.layer.cornerRadius = CGFloat(Double(progressView.frame.size.width) / 2)
+
         progressView.animateTo(Int(postCard.movieRate))
     }
 }

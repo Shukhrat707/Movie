@@ -11,6 +11,8 @@ import UIKit
 
 class HTMLConverter {
     
+    let BASE_URL = "https://www.themoviedb.org"
+    
     static let shared = HTMLConverter()
     
     func urlToHTMLString(url: String, completetionHandler: @escaping(_ html: String?, _ error: String?) -> ()) {

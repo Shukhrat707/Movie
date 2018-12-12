@@ -11,6 +11,8 @@ target 'Movie' do
   pod 'SwiftSoup'
   pod 'SDWebImage'
   pod 'MKRingProgressView'
+  pod 'Alamofire'
+  pod 'YouTubePlayer'
 
   target 'MovieUITests' do
     inherit! :search_paths

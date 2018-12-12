@@ -8,15 +8,39 @@
 
 import UIKit
 import SwiftSoup
+import Alamofire
 
-class PopularController: BaseVC {
+class PopularController: BaseVC, UISearchBarDelegate {
     
+    var timer: Timer?
     var postCards = [PostCard]()
+    var postCard: PostCard!
+    let searchController = UISearchController(searchResultsController: nil)
+    var postCardSearchView = Bundle.main.loadNibNamed("SearchView", owner: self, options: nil)?.first as? UIView
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        HTMLConverter.shared.urlToHTMLString(url: "\(APIService.shared.BASE_URL)/movie") { (htmlString, error) in
+        tableViewSetup()
+        
+        if postCards.count < 1 {
+            searchQueryFor(postCard: "/movie")
+        }
+        
+        searchBarSetup()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleDismissNotification), name: DISMISS_PREVIEW_VIEW, object: nil)
+    }
+    
+    @objc fileprivate func handleDismissNotification() {
+        DispatchQueue.main.async {
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+        }
+    }
+    
+    fileprivate func searchQueryFor(postCard postcard: String) {
+      
+        HTMLConverter.shared.urlToHTMLString(url: "\(HTMLConverter.shared.BASE_URL)\(postcard)") { (htmlString, error) in
             if let error = error {
                 print("Error: \(error)")
             }
@@ -35,6 +59,7 @@ class PopularController: BaseVC {
             if try! element.className() == "item poster card" {
                 let postCard = PostCard(withElement: element)
                 postCards.append(postCard)
+                print("PostCard: \(postCard)")
             }
         }
         DispatchQueue.main.async {
@@ -45,6 +70,50 @@ class PopularController: BaseVC {
     //MARK: - SearchBar Delegate Medthods
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
+        var query = "/search?query=\(searchBar.text!)"
+        
+        if searchBar.text == nil || searchBar.text == "" {
+            query = "/movie"
+        }
+        
+        postCards = []
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (timer) in
+            self.searchQueryFor(postCard: query)
+            self.tableView.reloadData()
+        })
+    }
+    
+    //MARK: - SearchBar Setup
+    fileprivate func searchBarSetup() {
+        
+        self.definesPresentationContext = true
+        navigationItem.searchController = searchController
+        searchController.searchBar.delegate = self
+        searchController.dimsBackgroundDuringPresentation = false
+        
+    }
+    
+    //MARK: - TableView Setup
+    fileprivate func tableViewSetup() {
+        
+        tableView.tableFooterView = UIView()
+        let nib = UINib(nibName: "MovieCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: cellId)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        postCard = postCards[indexPath.row]
+        performSegue(withIdentifier: "GoToPreview", sender: self)
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return postCardSearchView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return postCards.isEmpty && searchController.searchBar.text?.isEmpty == false ? 200 : 0
     }
     
     //MARK: - TableView Delegate Methods
@@ -59,7 +128,10 @@ class PopularController: BaseVC {
         return postCards.count
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GoToPreview" {
+            let vc = segue.destination as! PreviewController
+            vc.postCard = postCard
+        }
     }
 }

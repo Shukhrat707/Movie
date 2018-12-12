@@ -47,7 +47,7 @@ struct PostCard: Equatable {
                 
                 // Get Movie ID and Title name
                 let movieInfo = try! element.select("a")
-                movieId = try! movieInfo.attr("href")
+                movieId    = try! movieInfo.attr("href")
                 movieTitle = try! movieInfo.attr("title")
                 
                 // Get Movie Description
@@ -58,11 +58,11 @@ struct PostCard: Equatable {
                 pubDate = try! element.select("span").text()
             }
         }
-        self.moviePubDate = pubDate
+        self.moviePubDate      = pubDate
         self.movieThumbnailUrl = image_url
-        self.movieDescription = movieDescInfo
-        self.movieId = movieId
-        self.movieTitle = movieTitle
-        self.movieRate = Double(movieRank)!
+        self.movieDescription  = movieDescInfo
+        self.movieId           = movieId
+        self.movieTitle        = movieTitle
+        self.movieRate         = Double(movieRank)!
     }
 }
